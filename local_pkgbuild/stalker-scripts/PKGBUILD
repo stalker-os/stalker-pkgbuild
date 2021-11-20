@@ -6,14 +6,16 @@ _destname1="/usr/local/bin"
 pkgver=1.0
 pkgrel=1
 pkgdesc="System Scipts for S.T.A.L.K.E.R. OS"
-arch=('any')
-url="https://github.com/stalker-os/stalker-pkgbuild/local_pkgbuild/stalker-scripts"
+arch=('x86_64')
+url="https://github.com/stalker-os/stalker-scripts"
 license=('MIT')
-depends=(light xorg-xbacklight)
+makedepends=(git)
 provides=(${pkgname})
 options=(!strip !emptydirs)
+source=(${_pkgname}::"git+$url.git")
+md5sums=('SKIP')
 
 package() {
     install -dm755 ${pkgdir}${_destname1}
-    cp -rf ../scripts/* ${pkgdir}${_destname1} 
+    cp -rf ${_pkgname}${_destname1}/* ${pkgdir}${_destname1}
 }
