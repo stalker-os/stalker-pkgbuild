@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = stalker-hooks
+
+[Action]
+Description = Updating S.T.A.L.K.E.R. System Configurations...
+When = PostTransaction
+Exec = /usr/bin/stalker-hooks-runner

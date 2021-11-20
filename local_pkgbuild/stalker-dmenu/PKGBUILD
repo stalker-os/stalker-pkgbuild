@@ -1,0 +1,27 @@
+# Maintainer: Gabriel Matthews <matthewriel63@gmail.com>
+
+pkgname=stalker-dmenu
+_destname1=/opt/stalker-dmenu
+pkgver=5.0
+pkgrel=1
+pkgdesc="Command/Application Launcher for S.T.A.L.K.E.R. OS"
+arch=('x86_64')
+url="https://github.com/stalker-os/stalker-pkgbuild/local_pkgbuild/stalker-dmenu"
+license=('MIT')
+depends=(sh glibc coreutils libx11 libxinerama libxft)
+makedepends=(make)
+conflicts=(dmenu)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+build() {
+    cd ../files/
+	make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+}
+
+package() {
+    cd ../files/
+    install -dm755 ${pkgdir}${_destname1}
+    cp -rf * ${pkgdir}${_destname1}
+    make PREFIX=/usr DESTDIR="${pkgdir}${_destname1}" install
+}

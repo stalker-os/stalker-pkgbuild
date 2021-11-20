@@ -1,0 +1,21 @@
+# Maintainer: Gabriel Matthews <matthewriel63@gmail.com>
+pkgname=stalker-bspwm
+_pkgname=stalker-bspwm
+_destname1="/etc/skel/.config/"
+pkgver=1.0
+pkgrel=1
+pkgdesc="BSPWM Configurations for S.T.A.L.K.E.R. OS"
+arch=('x86_64')
+url="https://github.com/stalker-os/stalker-bspwm"
+license=('MIT')
+depends=(bspwm sxhkd polybar)
+makedepends=('git')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=("git+$url.git")
+sha256sums=('SKIP')
+
+package() {
+	install -dm755 ${pkgdir}${_destname1}
+	cp -r ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+}

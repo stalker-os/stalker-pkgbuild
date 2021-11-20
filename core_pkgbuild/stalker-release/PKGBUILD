@@ -1,0 +1,24 @@
+# Maintainer: Gabriel Matthews <matthewriel63@gmail.com>
+
+pkgname=stalker-release
+pkgver=1.0
+pkgrel=1
+pkgdesc="Pacman hooks for S.T.A.L.K.E.R. OS to fix various system files."
+arch=('any')
+url="https://github.com/stalker-os/stalker-pkgbuild/core_pkgbuild/stalker-release"
+license=('MIT')
+
+prepare() {
+    cp -af ../files/* ${srcdir}
+}
+
+package() {
+    local hooks=${pkgdir}/usr/share/libalpm/hooks
+    local bin=${pkgdir}/usr/bin
+
+    install -Dm644 ${srcdir}/stalker-hooks.hook              ${hooks}/stalker-hooks.hook
+    install -Dm644 ${srcdir}/stalker-lsb-release.hook        ${hooks}/stalker-lsb-release.hook
+    install -Dm644 ${srcdir}/stalker-os-release.hook         ${hooks}/stalker-os-release.hook
+
+    install -Dm755 ${srcdir}/stalker-hooks-runner            ${bin}/stalker-hooks-runner
+}
