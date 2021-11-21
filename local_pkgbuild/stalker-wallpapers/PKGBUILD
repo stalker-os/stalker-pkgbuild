@@ -16,5 +16,5 @@ sha256sums=('SKIP')
 
 package() {
 	install -dm755 ${pkgdir}${_destname1}
-	cp -r ${srcdir}/${_pkgname}${_destname1}* ${pkgdir}${_destname1}
+	cp -r ${srcdir}/${_pkgname}${_destname1}/* ${pkgdir}${_destname1}
 }
