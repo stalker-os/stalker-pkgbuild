@@ -1,0 +1,18 @@
+# Maintainer: Gabriel Matthews <matthewriel63@gmail.com>
+
+pkgname=zone-lxdm-theme
+_pkgname=zone
+_destname1=/usr/share/lxdm/themes
+pkgver=1.0
+pkgrel=1
+pkgdesc="LXDM theme for The Zone"
+arch=('x86_64')
+url="https://github.com/zone-linux/zone-pkgbuild/core_pkgbuild/zone-lxdm-theme"
+license=('MIT')
+depends=(grub)
+provides=(${pkgname})
+
+package() {
+    install -dm755 ${pkgdir}${_destname1}
+    cp -rf ../themes/${_pkgname} ${pkgdir}${_destname1}
+}
