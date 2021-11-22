@@ -157,8 +157,8 @@ prepare() {
 	patch -Np1 -i "${srcdir}/grub-add-GRUB_COLOR_variables.patch"
 	
 	echo "===> Patch to include Zone Modifications"
-	patch -Np1 -i "${srcdir}/grub-stalker-modifications.patch"
-	patch -Np1 -i "${srcdir}/grub-stalker-modifications-2.patch"
+	patch -Np1 -i "${srcdir}/grub-zone-modifications.patch"
+	patch -Np1 -i "${srcdir}/grub-zone-modifications-2.patch"
 	
 	echo "===> Add Ubuntu patches"
 	patch -Np1 -i "${srcdir}/0001-grub-maybe_quiet.patch"
@@ -174,8 +174,8 @@ prepare() {
 	echo "Fix OS naming FS#33393..."
 	sed 's|GNU/Linux|Linux|' -i "util/grub.d/10_linux.in"
 
-	echo "Bump Version to ${pkgver}~${pkgrel}~stalker"
-	sed -i -e "s|${_GRUB_INT_VER}|${pkgver}~${pkgrel}~stalker|g" "configure.ac"
+	echo "Bump Version to ${pkgver}~${pkgrel}~zone"
+	sed -i -e "s|${_GRUB_INT_VER}|${pkgver}~${pkgrel}~zone|g" "configure.ac"
 
 	echo "Pull in latest language files"
 	./linguas.sh
