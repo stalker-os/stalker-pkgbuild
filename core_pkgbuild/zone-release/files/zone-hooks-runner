@@ -18,7 +18,7 @@ fix_os_release() {
 
     sed -i "$file" \
         -e 's|^NAME=.*$|NAME=\"Zone\"|' \
-        -e 's|^PRETTY_NAME=.*$|PRETTY_NAME=\"Zone\"|' \
+        -e 's|^PRETTY_NAME=.*$|PRETTY_NAME=\"The Zone\"|' \
         -e 's|^ID=.*$|ID=Zone|' \
         -e 's|^ID_LIKE=.*$|ID_LIKE=arch|' \
         -e 's|^BUILD_ID=.*$|BUILD_ID=rolling|' \
