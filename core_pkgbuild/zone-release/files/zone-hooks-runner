@@ -8,21 +8,21 @@ fix_lsb_release() {
         echo "DISTRIB_RELEASE=rolling" >> "$file"
     fi
     sed -i "$file" \
-        -e 's|^DISTRIB_ID=.*$|DISTRIB_ID=zone|' \
+        -e 's|^DISTRIB_ID=.*$|DISTRIB_ID=Zone|' \
         -e 's|^DISTRIB_RELEASE=.*$|DISTRIB_RELEASE=rolling|' \
-        -e 's|^DISTRIB_DESCRIPTION=.*$|DISTRIB_DESCRIPTION=\"zone\"|'
+        -e 's|^DISTRIB_DESCRIPTION=.*$|DISTRIB_DESCRIPTION=\"Zone\"|'
 }
 
 fix_os_release() {
     local file=/usr/lib/os-release
 
     sed -i "$file" \
-        -e 's|^NAME=.*$|NAME=\"zone\"|' \
-        -e 's|^PRETTY_NAME=.*$|PRETTY_NAME=\"zone\"|' \
-        -e 's|^ID=.*$|ID=zone|' \
+        -e 's|^NAME=.*$|NAME=\"Zone\"|' \
+        -e 's|^PRETTY_NAME=.*$|PRETTY_NAME=\"Zone\"|' \
+        -e 's|^ID=.*$|ID=Zone|' \
         -e 's|^ID_LIKE=.*$|ID_LIKE=arch|' \
         -e 's|^BUILD_ID=.*$|BUILD_ID=rolling|' \
-        -e 's|^HOME_URL=.*$|HOME_URL=\"https://zone-linux.github.io\"|' \
+        -e 's|^HOME_URL=.*$|HOME_URL=\"https://Zone-linux.github.io\"|' \
         -e 's|^BUG_REPORT_URL=.*$|BUG_REPORT_URL=\"https://github.com/zone-linux/zone-iso/issues\"|' \
         -e 's|^LOGO=.*$|LOGO=zone|'
 
@@ -32,7 +32,7 @@ fix_os_release() {
     fi
 
 	# fix issue file
-    sed -i 's|Arch Linux|zone|g' /etc/issue /usr/share/factory/etc/issue
+    sed -i 's|Arch Linux|The Zone|g' /etc/issue /usr/share/factory/etc/issue
 }
 
 main()
