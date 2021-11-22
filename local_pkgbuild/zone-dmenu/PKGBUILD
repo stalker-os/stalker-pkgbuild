@@ -3,7 +3,7 @@
 pkgname=zone-dmenu
 pkgver=5.0
 pkgrel=1
-pkgdesc="Command/Application Launcher for S.T.A.L.K.E.R. OS"
+pkgdesc="Command/Application Launcher for The Zone"
 arch=('x86_64')
 url="https://github.com/zone-linux/zone-dmenu"
 license=('MIT')
@@ -12,7 +12,7 @@ makedepends=(git make)
 conflicts=(dmenu)
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=(${pkgname}::"git+https://github.com/zone-linux/${pkgname}.git")
+source=(${pkgname}::"git+$url.git")
 md5sums=('SKIP')
 
 build() {
