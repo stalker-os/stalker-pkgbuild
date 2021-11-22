@@ -1,0 +1,18 @@
+# Maintainer: Gabriel Matthews <matthewriel63@gmail.com>
+
+pkgname=stalker-grub-theme
+_pkgname=stalker
+_destname1=/usr/share/grub/themes
+pkgver=1.0
+pkgrel=1
+pkgdesc="GRUB menu theme for S.T.A.L.K.E.R. OS"
+arch=('x86_64')
+url="https://github.com/stalker-os/stalker-pkgbuild/core_pkgbuild/stalker-grub-theme"
+license=('MIT')
+depends=(grub)
+provides=(${pkgname})
+
+package() {
+    install -dm755 ${pkgdir}${_destname1}
+    cp -rf ../${_pkgname} ${pkgdir}${_destname1}
+}

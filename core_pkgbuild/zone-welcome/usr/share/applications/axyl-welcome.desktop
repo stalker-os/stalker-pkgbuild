@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=zone Welcome
+Comment=zone Welcome Application
+Exec=zone-welcome
+Icon=zone-logo
+Type=Application
+Categories=System;
