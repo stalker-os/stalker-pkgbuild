@@ -1,1 +1,1 @@
-# stalker-pkgbuild
+# zone-pkgbuild
