@@ -5,6 +5,6 @@ Type = Package
 Target = filesystem
 
 [Action]
-Description = Updating S.T.A.L.K.E.R. OS-Specific Configurations...
+Description = Updating Zone OS-Specific Configurations...
 When = PostTransaction
-Exec = /usr/bin/stalker-hooks-runner os-release
+Exec = /usr/bin/zone-hooks-runner os-release

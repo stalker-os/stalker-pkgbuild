@@ -74,8 +74,8 @@ source=("grub::git+https://git.savannah.gnu.org/git/grub.git#commit=$_GRUB_COMMI
         "https://ftp.gnu.org/gnu/unifont/unifont-${_UNIFONT_VER}/unifont-${_UNIFONT_VER}.bdf.gz"
         'grub-export-path.patch'
         'grub-add-GRUB_COLOR_variables.patch'
-        'grub-stalker-modifications.patch'
-        'grub-stalker-modifications-2.patch'
+        'grub-zone-modifications.patch'
+        'grub-zone-modifications-2.patch'
         'grub-use-efivarfs.patch'
         '0001-grub-maybe_quiet.patch'
         '0002-grub-gettext_quiet.patch'

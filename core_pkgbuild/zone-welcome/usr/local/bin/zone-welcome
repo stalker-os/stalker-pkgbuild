@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-## Welcome / Autostart app for S.T.A.L.K.E.R. OS 
+## Welcome / Autostart app for The Zone 
 
-DIR='/usr/share/stalker/src'
+DIR='/usr/share/zone/src'
 stdbuf -oL -eL yad  --width='900' --height='570' --borders=0 --center \
 					--title='Welcome' \
-					--window-icon=stalker-logo \
+					--window-icon=zone-logo \
 					--no-buttons --no-escape \
                                         --html --uri="$DIR/index.html" \
                                         --print-uri 2>&1 \
