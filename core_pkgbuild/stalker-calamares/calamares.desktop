@@ -1,13 +1,13 @@
 [Desktop Entry]
 Type=Application
 Version=1.0
-Name=Install Axyl OS
-Name[da]=Installer Axyl OS
+Name=Install S.T.A.L.K.E.R. OS
+Name[da]=Installer S.T.A.L.K.E.R. OS
 GenericName=Live Installer
 GenericName[da]=Live-installationsprogram
 Comment=Install the operating system to disk
 Comment[da]=Installer styresystemet på disk
-Comment[de]=Axyl OS installieren
+Comment[de]=S.T.A.L.K.E.R. OS installieren
 Exec=/usr/bin/calamares_polkit %f
 Icon=calamares
 Terminal=false
