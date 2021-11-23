@@ -9,7 +9,6 @@ pkgdesc="Desktop Environment that can withstand the Radiation in Center of The Z
 arch=('x86_64')
 url="https://github.com/zone-linux/zone-xfce"
 license=('MIT')
-depends=(xfce4 xfce4-goodies)
 makedepends=('git')
 provides=("${pkgname}")
 options=(!strip !emptydirs)
