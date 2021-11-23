@@ -3,6 +3,7 @@
 pkgname=zone-xfce
 _pkgname=zone-xfce
 _destname1="/etc/skel"
+_destname2="/usr/local/bin"
 pkgver=1.0
 pkgrel=1
 pkgdesc="Desktop Environment that can withstand the Radiation in Center of The Zone."
@@ -14,11 +15,14 @@ provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=("git+$url.git")
 sha256sums=('SKIP')
+install="post.install"
 
 package() {
 	install -dm755 ${pkgdir}${_destname1}
+        install -dm755 ${pkgdir}${_destname2}
 
         cp -rf ${srcdir}/${_pkgname}/src/.config        ${pkgdir}${_destname1}
+        cp -rf ${srcdir}/${_pkgname}/scripts/*          ${pkgdir}${_destname2}
 
         install -Dm644 ${srcdir}/${_pkgname}/src/'.dmrc'        ${pkgdir}${_destname1}
         install -Dm644 ${srcdir}/${_pkgname}/src/'.hushlogin'   ${pkgdir}${_destname1}
