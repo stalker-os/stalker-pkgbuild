@@ -1,6 +1,7 @@
 # Maintainer: Gabriel Matthews <matthewriel63@gmail.com>
+
 pkgname=zone-wallpapers
-_pkgname=zone-wallpapers
+_pkgname=zone
 _destname1="/usr/share/backgrounds"
 pkgver=1.0
 pkgrel=1
@@ -16,5 +17,5 @@ sha256sums=('SKIP')
 
 package() {
 	install -dm755 ${pkgdir}${_destname1}
-	cp -r ${srcdir}/${_pkgname}${_destname1}/* ${pkgdir}${_destname1}
+	cp -r ${srcdir}/${pkgname}/${_pkgname} ${pkgdir}${_destname1}
 }
