@@ -1,0 +1,17 @@
+# Maintainer: Gabriel Matthews <matthewriel63@gmail.com>
+
+pkgname=stalker-anomaly-playlist
+_destname1="/etc/skel/Music"
+pkgver=1.0
+pkgrel=1
+pkgdesc="Songs Played by Stalkers in The Zone"
+arch=('x86_64')
+url="https://github.com/zone-linux/zone-pkgbuild/local_pkgbuild/zone-music/stalker-anomaly-playlist"
+license=('MIT')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+package() {
+	install -dm755 ${pkgdir}${_destname1}
+	cp -rf ../Stalker_Anomaly ${pkgdir}${_destname1}
+}
