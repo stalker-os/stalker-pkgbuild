@@ -4,6 +4,8 @@ pkgname=zone-xfce
 _pkgname=zone-xfce
 _destname1="/etc/skel"
 _destname2="/usr/local/bin"
+_destname3="/usr/share/sounds/zone"
+_destname4="/usr/bin"
 pkgver=1.0
 pkgrel=1
 pkgdesc="Desktop Environment that can withstand the Radiation in Center of The Zone."
@@ -20,14 +22,19 @@ install="post.install"
 package() {
 	install -dm755 ${pkgdir}${_destname1}
         install -dm755 ${pkgdir}${_destname2}
+        install -dm755 ${pkgdir}${_destname3}
+        install -dm755 ${pkgdir}${_destname4}
+
 
         cp -rf ${srcdir}/${_pkgname}/src/.config        ${pkgdir}${_destname1}
         cp -rf ${srcdir}/${_pkgname}/src/.mpd           ${pkgdir}${_destname1}
         cp -rf ${srcdir}/${_pkgname}/scripts/*          ${pkgdir}${_destname2}
+        cp -rf ${srcdir}/${_pkgname}/startup-sounds/*   ${pkgdir}${_destname3}
 
         install -Dm644 ${srcdir}/${_pkgname}/src/'.dmrc'                ${pkgdir}${_destname1}
         install -Dm644 ${srcdir}/${_pkgname}/src/'.hushlogin'           ${pkgdir}${_destname1}
         install -Dm644 ${srcdir}/${_pkgname}/src/'.gtkrc-2.0'           ${pkgdir}${_destname1}
         install -Dm644 ${srcdir}/${_pkgname}/src/'.zshrc'               ${pkgdir}${_destname1}
         install -Dm644 ${srcdir}/${_pkgname}/src/'.zshrc-personal'      ${pkgdir}${_destname1}
+        install -Dm755 ${srcdir}/${_pkgname}/bin/'startupsound'         ${pkgdir}${_destname4}
 }
