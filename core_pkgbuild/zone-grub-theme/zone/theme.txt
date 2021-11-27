@@ -19,7 +19,7 @@ terminal-border: "0"
   top = 30%
   width = 45%
   height = 45%
-  item_font = "Unifont Regular 16"
+  item_font = "28 Days Later Regular 24"
   item_color = "#cccccc"
   selected_item_color = "#ffffff"
   icon_width = 32
@@ -40,5 +40,5 @@ terminal-border: "0"
   id = "__timeout__"
   text = "Booting in %d seconds"
   color = "#cccccc"
-  font = "Unifont Regular 16"
+  font = "28 Days Later Regular 24"
 }
