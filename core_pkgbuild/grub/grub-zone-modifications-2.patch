@@ -49,10 +49,10 @@
  # menu entries you want to add after this comment.  Be careful not to change
  # the 'exec tail' line above.
 +
-+menuentry 'Reboot Computer' --class restart {
++menuentry 'Reboot PDA' --class restart {
 +	reboot
 +}
 +
-+menuentry 'Shutdown Computer' --class shutdown {
++menuentry 'Shutdown PDA' --class shutdown {
 +	halt
 +}
