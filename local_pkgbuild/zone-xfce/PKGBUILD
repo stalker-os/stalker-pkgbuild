@@ -33,7 +33,6 @@ package() {
 
         install -Dm644 ${srcdir}/${_pkgname}/src/'.dmrc'                ${pkgdir}${_destname1}
         install -Dm644 ${srcdir}/${_pkgname}/src/'.hushlogin'           ${pkgdir}${_destname1}
-        install -Dm644 ${srcdir}/${_pkgname}/src/'.gtkrc-2.0'           ${pkgdir}${_destname1}
         install -Dm644 ${srcdir}/${_pkgname}/src/'.zshrc'               ${pkgdir}${_destname1}
         install -Dm644 ${srcdir}/${_pkgname}/src/'.zshrc-personal'      ${pkgdir}${_destname1}
         install -Dm755 ${srcdir}/${_pkgname}/bin/'startupsound'         ${pkgdir}${_destname4}
