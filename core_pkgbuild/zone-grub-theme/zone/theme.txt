@@ -15,10 +15,11 @@ terminal-border: "0"
 
 # Show the boot menu
 + boot_menu {
-  left = 22%
+  left = 25%
   top = 28%
-  width = 23%
+  width = 47%
   height = 45%
+  align = "center"
   item_font = "28 Days Later Regular 24"
   item_color = "#cccccc"
   selected_item_color = "#ffffff"
@@ -33,12 +34,12 @@ terminal-border: "0"
 
 # Show a countdown message using the label component
 + label {
-  top = 78%
-  left = 47%
+  top = 77%
+  left = 55%
   width = 30%
   align = "center"
   id = "__timeout__"
-  text = "Entering The Zone in %d..."
+  text = "Booting in %d"
   color = "#cccccc"
   font = "JetBrains Mono Regular 20"
 }
