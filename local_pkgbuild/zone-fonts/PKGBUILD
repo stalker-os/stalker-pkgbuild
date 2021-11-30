@@ -1,8 +1,8 @@
 # Maintainer: Gabriel Matthews <matthewriel63@gmail.com>
 
 pkgname=zone-fonts
-_pkgname=zone-fonts
-_destname1="/etc/skel/.local/share"
+_pkgname=fonts
+_destname1="/usr/share/fonts/TTF"
 pkgver=1.0
 pkgrel=1
 pkgdesc="Fonts for The Zone"
@@ -15,5 +15,5 @@ options=(!strip !emptydirs)
 package() {
     install -dm755 ${pkgdir}${_destname1}
     
-    cp -r ../fonts ${pkgdir}${_destname1}
+    cp -r ../${_pkgname}/* ${pkgdir}${_destname1}
 }
