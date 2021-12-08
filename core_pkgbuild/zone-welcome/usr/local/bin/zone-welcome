@@ -13,11 +13,11 @@ stdbuf -oL -eL yad  --width='900' --height='500' --borders=0 --center \
 	case ${line##*/} in
 		run1)
                 notify-send -u low "Launching Calamares..." \
-                            --icon="/usr/share/zone.png" && calinstall 
+                            --icon="/usr/share/zone.png" && sudo calamares 
                 ;;
         run2)
                 notify-send -u low "Launching Calamares (Debug Mode)..." \
-                            --icon="/usr/share/zone.png" && calinstall-debug 
+                            --icon="/usr/share/zone.png" && xfce4-terminal -x sudo calamares -d 
                 ;;
 		*)		   echo "No URI" ;;
 	esac
