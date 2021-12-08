@@ -2,6 +2,7 @@
 
 pkgname=zone-welcome
 _destname1="/usr"
+_destname2="/etc/skel/.config/autostart"
 pkgver=1.0
 pkgrel=1
 pkgdesc="Autostart app for The Zone"
@@ -14,5 +15,8 @@ options=(!strip !emptydirs)
 
 package() {
     install -dm755 ${pkgdir}${_destname1}
+    install -dm755 ${pkgdir}${_destname2}
+
     cp -rf ..${_destname1}/* ${pkgdir}${_destname1}
-}
+    cp -f ../welcome.desktop ${pkgdir}${_destname2}
+  }
