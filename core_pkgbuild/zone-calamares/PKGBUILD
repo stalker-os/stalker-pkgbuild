@@ -25,7 +25,7 @@ source=("$_pkgname-$pkgver::$url/download/v$pkgver/$_pkgname-$pkgver.tar.gz"
 	"49-nopasswd-calamares.rules")
 
 sha256sums=('5c668ad545f03bbc55cdd8224c47709022abb05c8e991b9b20908469eff5b937'
-            '413a79e0e24102802b59a5f839db288f0b2136f8015188cd64c22c6b9e506eb1'
+            '54a7ed16561fcddd82788a4327743fe822f3053910a0feb0cf408eb0aa5366b2'
             '4c8b48518b0047672e835e0a6c8a66342b316ab8835cf4c331030de4830dcea2'
             '56d85ff6bf860b9559b8c9f997ad9b1002f3fccc782073760eca505e3bddd176')
 
@@ -72,7 +72,7 @@ build() {
 package() {
 	cd ${_pkgname}-${pkgver}/build
 	make DESTDIR="$pkgdir" install
-	install -Dm644 "${srcdir}/calamares.desktop" "$pkgdir/etc/skel/Desktop/calamares.desktop"
+	install -Dm755 "${srcdir}/calamares.desktop" "$pkgdir/etc/skel/Desktop/calamares.desktop"
 	install -Dm755 "${srcdir}/calamares_polkit" "$pkgdir/usr/bin/calamares_polkit"
 	install -Dm644 "${srcdir}/49-nopasswd-calamares.rules" "$pkgdir/etc/polkit-1/rules.d/49-nopasswd-calamares.rules"
 	chmod 750 "$pkgdir"/etc/polkit-1/rules.d
