@@ -5,3 +5,5 @@ Exec=zone-welcome
 Icon=zone
 Type=Application
 Categories=System;
+Keywords=welcome;zone;
+StartupNotify=true

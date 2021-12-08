@@ -1,15 +1,15 @@
 [Desktop Entry]
 Type=Application
 Version=1.0
-Name=Install S.T.A.L.K.E.R. OS
-Name[da]=Installer S.T.A.L.K.E.R. OS
+Name=Install The Zone
+Name[da]=Installer The Zone 
 GenericName=Live Installer
 GenericName[da]=Live-installationsprogram
 Comment=Install the operating system to disk
 Comment[da]=Installer styresystemet på disk
-Comment[de]=S.T.A.L.K.E.R. OS installieren
+Comment[de]=The Zone installieren
 Exec=/usr/bin/calamares_polkit %f
-Icon=calamares
+Icon=zone
 Terminal=false
 StartupNotify=true
 Type=Application
