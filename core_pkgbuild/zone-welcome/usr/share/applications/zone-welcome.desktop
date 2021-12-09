@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Zone Welcome
-Comment=Zone Welcome Application
-Exec=zone-welcome
-Icon=zone
-Type=Application
-Categories=System;
-Keywords=welcome;zone;
-StartupNotify=true
