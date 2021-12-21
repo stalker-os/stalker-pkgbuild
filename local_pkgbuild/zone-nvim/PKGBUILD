@@ -14,12 +14,12 @@ optdepends=()
 
 source=('nvim-config.tar.gz' 'nvim-plugins.tar.gz')
 
-sha256sums=('59023648351101f048c7da4ca707175774206ee833ae6dbad14c4c6de74aa02e'
-            '46b995aff1f4b59e822059569f433e94757d81359551bdc910023abbfc2e94b2')
+sha256sums=('376147023b96eb297217f69eea676b64c750c7cfb0cff7c38d34a7ba12d903fa'
+            'f97ed4c49f5488a95a7be5c78cb8e9610c1642cc1e3d089c0802c0a21d735446')
 
 package() {
-	mkdir -p ${pkgdir}/etc/skel/.config
-	mkdir -p ${pkgdir}/etc/skel/.local/share/nvim
+	install -dm755 ${pkgdir}/etc/skel/.config
+	install -dm755 ${pkgdir}/etc/skel/.local/share/nvim
 
 	cp -rf ${srcdir}/nvim ${pkgdir}/etc/skel/.config/nvim
 	cp -rf ${srcdir}/nvim-plugins/* ${pkgdir}/etc/skel/.local/share/nvim
