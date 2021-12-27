@@ -11,12 +11,31 @@ search_file="/tmp/yt-script-search"
 queries_file="${XDG_CONFIG_HOME:-$HOME}/.yt-queries"
 
 
+clearHistory() {
+  if [[ ! -f "$queries_file" ]]; then
+      die "${c_red}Your search history is already cleared.${c_reset}\n"
+  fi
+
+  rm -rf "$queries_file" && die "${c_green}History cleared. You're safe now. ;)${c_reset}"
+}
+
 listQueries() {
     if [[ ! -f "$queries_file" ]]; then
-        die "You don't have a search history.\n"
+        die "${c_red}You don't have a search history.${c_reset}\n"
     fi
 
+    tput reset
+    printf "${c_red}Your search history:${c_reset}\n\n"
     formatPrint "$queries_file"
+
+    printf "\n${c_red}Enter Choice:${c_reset} "
+    read -r choice
+    [ "$choice" -eq "$choice" ] 2>/dev/null || die "${c_red}Invalid Number Entered.${c_reset}\n"
+    [[ $(wc -l ${queries_file} | awk '{print $1}') -lt "$choice" ]] || [[ "$choice" -lt 0 ]] || [[ "$choice" -eq 0 ]] && die "${c_red}Invalid choice range.${c_reset}\n"
+  
+    selected=$(awk -v choice="$choice" '{if(NR==choice) print $0}' "$queries_file")
+    echo "$selected" | xclip -selection clipboard
+    printf "\n${c_green}\"$selected\"${c_reset} has been copied to your clipboard.\n"
 }
 
 formatPrint(){
@@ -43,12 +62,18 @@ notify() {
 
 playVideo() {
     local link="$1"
+
+    # kill mpv if it's running
+    if pgrep mpv; then
+        pkill mpv
+    fi
+
     setsid -f mpv "$link" --loop 2>/dev/null 1>&2
 }
 
 searchHistory() {
     if [[ ! -f "$search_file" ]]; then
-        die "You don't have a recent search history\n"
+        die "${c_red}You don't have recent results history.${c_reset}\n"
     fi
 
     if [[ ! -f "$api_file" ]]; then
@@ -264,10 +289,17 @@ elif [[ "$1" == "-h" || "$1" == "--history" ]]; then
 elif [[ "$1" == "-k" || "$1" == "--kill" ]]; then
     pkill mpv
 
+# Lists your search.
+# You can select one and it auto copies it for you.
 elif [[ "$1" == "-q" || "$1" == "--queries" ]]; then
     listQueries
+
+# Clear search history :)
+elif [[ "$1" == "--clear-history" ]]; then
+    clearHistory
 
 # Help screen
 elif [[ "$1" == "--help" ]]; then
     helpScreen
+
 fi
