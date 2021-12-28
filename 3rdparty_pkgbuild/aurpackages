@@ -1,13 +1,13 @@
 ani-cli-git
 cava
 ckbcomp
-devour
 grub2-theme-preview
 kvantum-theme-qogir-git
 minecraft-launcher
 mkinitcpio-openswap
 nerd-fonts-jetbrains-mono
 oh-my-zsh-git
+paru-bin
 qogir-icon-theme-git
 qogir-gtk-theme-git
 shell-color-scripts
@@ -16,4 +16,4 @@ ulauncher
 unimatrix-git
 visual-studio-code-bin
 xfce-polkit
-paru-bin
+yt-watch-git
