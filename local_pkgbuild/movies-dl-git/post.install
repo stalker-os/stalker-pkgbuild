@@ -1,6 +1,6 @@
 post_install() {
     echo -e "\n** Creating Symlink for movies-dl **\n"
-    ln -sf /usr/share/movies-dl/movies-dl /usr/bin/movies-dl
+    ln -sf /usr/share/movies-dl/movies-dl.py /usr/bin/movies-dl
     chmod +x /usr/bin/movies-dl
 }
 
