@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 files = ["movies-dl/*"]
 
 
-setup(name = "movies-dl",
+setup(name = "moviesDl",
     version = "1.0",
     description = "The python program that lets you download movies for free.",
     author = "matthew",
