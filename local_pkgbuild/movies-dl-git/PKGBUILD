@@ -2,7 +2,7 @@
 
 pkgname="movies-dl-git"
 _pkgname="movies-dl"
-pkgver=r74.24fad55
+pkgver=r79.ec12d2e
 pkgrel=1
 pkgdesc="The python program that lets you download movies for free."
 arch=('any')
@@ -28,6 +28,7 @@ pkgver() {
 build() {
   cd "$srcdir/$_pkgname"
   python3 ../../setup.py build
+  python3 -m pip install -r ./requirements.txt
 }
 
 package() {
